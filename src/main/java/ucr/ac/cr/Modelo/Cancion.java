@@ -14,6 +14,8 @@ public class Cancion
     private int duracion;
     private String genero;
     private int ano;
+    
+    public static final String[] TITULOS_CANCION={"TITULO","DURACION","GENERO","AÑO LANZAMIENTO"};
 
     public Cancion(String titulo, int duracion, String genero, int ano) 
     {

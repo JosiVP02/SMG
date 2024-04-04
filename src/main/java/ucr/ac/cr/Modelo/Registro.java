@@ -106,4 +106,21 @@ public class Registro
       return titulos;
     }
     
+    
+    public String [][] getMatrizCanciones()
+    {
+        
+      String [][] matrizCanciones=new String[this.listaCanciones.size()][Cancion.TITULOS_CANCION.length];
+      
+      for(int f=0; f<matrizCanciones.length; f++)
+      {
+         matrizCanciones[f][0]=listaCanciones.get(f).getTitulo();
+         matrizCanciones[f][1]=listaCanciones.get(f).getDuracion()+"";
+         matrizCanciones[f][2]=listaCanciones.get(f).getGenero();
+         matrizCanciones[f][3]=listaCanciones.get(f).getAno()+"";
+      }
+      
+      return matrizCanciones;
+    }
+    
 }

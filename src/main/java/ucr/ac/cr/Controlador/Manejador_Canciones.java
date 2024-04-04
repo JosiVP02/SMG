@@ -6,9 +6,12 @@ package ucr.ac.cr.Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import ucr.ac.cr.Modelo.Cancion;
 import ucr.ac.cr.Modelo.Registro;
 import ucr.ac.cr.Vista.FRM_Canciones;
+import ucr.ac.cr.Vista.FRM_Reporte;
 import ucr.ac.cr.Vista.PanelBotones;
 import ucr.ac.cr.Vista.PanelDatosCancion;
 
@@ -16,14 +19,14 @@ import ucr.ac.cr.Vista.PanelDatosCancion;
  *
  * @author Usuario
  */
-public class Manejador_Canciones implements ActionListener
+public class Manejador_Canciones implements ActionListener, MouseListener
 {
     private PanelBotones panelBotones;
     private Registro registro;
     private FRM_Canciones frmCanciones;
     private PanelDatosCancion panelDatos;
     private Cancion cancion;
-    
+    private FRM_Reporte reporte;
     
     
     public Manejador_Canciones()
@@ -38,7 +41,9 @@ public class Manejador_Canciones implements ActionListener
         this.panelBotones=this.frmCanciones.getPanelBotones();
         
         this.frmCanciones.setVisible(true);
+        this.reporte= new FRM_Reporte();
         
+        this.reporte.escucharMouse(this);
     }//fin constructor
 
     @Override
@@ -112,9 +117,47 @@ public class Manejador_Canciones implements ActionListener
                   this.panelBotones.activarBotones(true);
                 break;
                 
+                
+                case "Reporte":
+                    
+                    reporte.setDataTable(registro.getMatrizCanciones(), Cancion.TITULOS_CANCION);
+                    reporte.setVisible(true);
+                    break;
+                
            
         }
         
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) 
+    {
+       this.panelDatos.setCancion(new Cancion(this.reporte.getDataRow()[0],
+       Integer.parseInt(this.reporte.getDataRow()[1]),
+               this.reporte.getDataRow()[2],
+                       Integer.parseInt(this.reporte.getDataRow()[3])));
+       
+       this.reporte.dispose();
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) 
+    {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) 
+    {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) 
+    {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) 
+    {
     }
     
     

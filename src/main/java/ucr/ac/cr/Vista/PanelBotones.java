@@ -26,6 +26,7 @@ public class PanelBotones extends javax.swing.JPanel {
       this.btEditar.addActionListener(manejador);
       this.btEliminar.addActionListener(manejador);
       this.btMenu.addActionListener(manejador);
+      this.btnReporte.addActionListener(manejador);
     }
     
     
@@ -51,6 +52,7 @@ public class PanelBotones extends javax.swing.JPanel {
         btEliminar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
         btMenu = new javax.swing.JButton();
+        btnReporte = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 255, 51));
 
@@ -88,20 +90,24 @@ public class PanelBotones extends javax.swing.JPanel {
         btMenu.setToolTipText("");
         btMenu.setActionCommand("Salir");
 
+        btnReporte.setText("Reporte");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(btGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btEditar)
-                .addGap(28, 28, 28)
+                .addGap(36, 36, 36)
                 .addComponent(btEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(btMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(18, 18, 18)
+                .addComponent(btnReporte)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,8 +117,9 @@ public class PanelBotones extends javax.swing.JPanel {
                     .addComponent(btGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btMenu))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(btMenu)
+                    .addComponent(btnReporte))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,5 +145,6 @@ public class PanelBotones extends javax.swing.JPanel {
     private javax.swing.JButton btEliminar;
     private javax.swing.JButton btGuardar;
     private javax.swing.JButton btMenu;
+    private javax.swing.JButton btnReporte;
     // End of variables declaration//GEN-END:variables
 }
