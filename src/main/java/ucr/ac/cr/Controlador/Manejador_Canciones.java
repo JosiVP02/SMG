@@ -29,13 +29,14 @@ public class Manejador_Canciones implements ActionListener, MouseListener
     private FRM_Reporte reporte;
     
     
-    public Manejador_Canciones()
+    public Manejador_Canciones(Registro registro)
     {
       
         this.frmCanciones=new FRM_Canciones();
         this.frmCanciones.setEscuchadores(this);
         
-        this.registro= new Registro();
+        this.registro=registro;
+        
         this.panelDatos=this.frmCanciones.getPanelDatos();
         this.panelDatos.cargarCombo(this.registro.getComboTitulo());
         this.panelBotones=this.frmCanciones.getPanelBotones();

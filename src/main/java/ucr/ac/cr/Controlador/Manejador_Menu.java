@@ -6,6 +6,9 @@ package ucr.ac.cr.Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import ucr.ac.cr.Modelo.Registro;
+import ucr.ac.cr.Modelo.RegistroAlbum;
+import ucr.ac.cr.Modelo.RegistroArtista;
 import ucr.ac.cr.Vista.FRM_Menu;
 
 /**
@@ -14,14 +17,19 @@ import ucr.ac.cr.Vista.FRM_Menu;
  */
 public class Manejador_Menu implements ActionListener
 {
-    FRM_Menu frmMenu;
+    private FRM_Menu frmMenu;
+    private Registro registro;
+    private RegistroAlbum registroAlbum;
+    private RegistroArtista registroAr;
+    
     
     public Manejador_Menu()
     {
-    
+    this.registro= new Registro();
     this.frmMenu=new FRM_Menu();
     this.frmMenu.escucharMenu(this);
     this.frmMenu.setVisible (true);
+    this.registroAlbum=new RegistroAlbum();
     }
 
     @Override
@@ -31,7 +39,7 @@ public class Manejador_Menu implements ActionListener
         {
             case "Registro Canciones":
                 
-                new Manejador_Canciones();
+                new Manejador_Canciones(registro);
                 break;
                 
             case "Registro Artistas":
@@ -42,6 +50,13 @@ public class Manejador_Menu implements ActionListener
             case "Salir":
                 
               System.exit(0);
+                break;
+                
+                
+            case "Registro Albumes":
+                
+                new ManejadorAlbumes(registro,registroAr, registroAlbum);
+                
                 break;
                     
         

@@ -25,6 +25,7 @@ public class FRM_Menu extends javax.swing.JFrame {
      this.jmiRegistroArtistas.addActionListener(manejador);
      this.jmiRegistroCanciones.addActionListener(manejador);
      this.jmiSalir.addActionListener(manejador);
+     this.jmiRegistroAlbumes.addActionListener(manejador);
     }
     
     /**
@@ -44,6 +45,7 @@ public class FRM_Menu extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jmiRegistroCanciones = new javax.swing.JMenuItem();
         jmiRegistroArtistas = new javax.swing.JMenuItem();
+        jmiRegistroAlbumes = new javax.swing.JMenuItem();
         jmiSalir = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -64,6 +66,9 @@ public class FRM_Menu extends javax.swing.JFrame {
 
         jmiRegistroArtistas.setText("Registro Artistas");
         jMenu5.add(jmiRegistroArtistas);
+
+        jmiRegistroAlbumes.setText("Registro Albumes");
+        jMenu5.add(jmiRegistroAlbumes);
 
         jMenuBar3.add(jMenu5);
 
@@ -103,6 +108,7 @@ public class FRM_Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jmiRegistroAlbumes;
     private javax.swing.JMenuItem jmiRegistroArtistas;
     private javax.swing.JMenuItem jmiRegistroCanciones;
     private javax.swing.JMenu jmiSalir;

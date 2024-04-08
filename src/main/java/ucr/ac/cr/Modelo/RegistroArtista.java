@@ -25,6 +25,17 @@ public class RegistroArtista
         }
         
         
+    public int[] getId ()
+    {
+      int[] ids =new int[this.listaArtistas.size()];
+        for (int i = 0; i < listaArtistas.size(); i++) 
+        {
+            ids[i]=this.listaArtistas.get(i).getId();
+        }
+      
+      return ids;
+    }
+        
         
 
 

@@ -95,7 +95,7 @@ public class Registro
     
     //*******************************************************************
     
-    public String[] getComboTitulo()
+    public String[]getComboTitulo ()
     {
       String[] titulos =new String[this.listaCanciones.size()];
         for (int i = 0; i < listaCanciones.size(); i++) 

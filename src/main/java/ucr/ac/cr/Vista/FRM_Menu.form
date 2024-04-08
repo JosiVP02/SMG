@@ -42,6 +42,11 @@
                 <Property name="text" type="java.lang.String" value="Registro Artistas"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jmiRegistroAlbumes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Registro Albumes"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jmiSalir">
