@@ -25,12 +25,12 @@ public class RegistroArtista
         }
         
         
-    public int[] getId ()
+    public String[] getId ()
     {
-      int[] ids =new int[this.listaArtistas.size()];
+      String[] ids =new String[this.listaArtistas.size()];
         for (int i = 0; i < listaArtistas.size(); i++) 
         {
-            ids[i]=this.listaArtistas.get(i).getId();
+            ids[i]=""+this.listaArtistas.get(i).getId();
         }
       
       return ids;

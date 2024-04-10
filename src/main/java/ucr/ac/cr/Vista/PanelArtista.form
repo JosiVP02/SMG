@@ -53,7 +53,9 @@
                   <Component id="jtGenero" max="32767" attributes="0"/>
                   <Component id="jtId" pref="162" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="137" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="cboxArtistas" pref="153" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,6 +66,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="jtNombre" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="cboxArtistas" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -80,7 +83,7 @@
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtId" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="143" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,6 +131,19 @@
     <Component class="javax.swing.JTextField" name="jtGenero">
     </Component>
     <Component class="javax.swing.JTextField" name="jtId">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboxArtistas">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxArtistasActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

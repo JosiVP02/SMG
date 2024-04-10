@@ -4,6 +4,11 @@
  */
 package ucr.ac.cr.Vista;
 
+import java.awt.event.ActionListener;
+import javax.swing.DefaultComboBoxModel;
+import ucr.ac.cr.Modelo.Artista;
+import ucr.ac.cr.Modelo.Cancion;
+
 /**
  *
  * @author Usuario
@@ -18,7 +23,62 @@ public class PanelArtista extends javax.swing.JPanel {
         initComponents();
     }
 
+
     
+    public void escuchador(ActionListener manejador)
+    {
+       this.cboxArtistas.addActionListener(manejador);
+    }
+    
+    public Artista getArtista()
+    {
+       return new Artista(this.jtNombre.getText(), 
+               this.jtPais.getText(), 
+               this.jtGenero.getText(), 
+               Integer.parseInt(this.jtId.getText()));
+    }
+    
+    public void setArtista( Artista artista)
+    {
+       this.jtNombre.setText(artista.getNombre());
+       this.jtPais.setText(artista.getPais());
+       this.jtGenero.setText(artista.getGenero());
+       this.jtId.setText(""+artista.getId());
+       
+    }
+    
+    public void limpiar()
+    {
+      this.jtNombre.setText("");
+      this.jtPais.setText("");
+      this.jtGenero.setText("");
+      this.jtId.setText("");
+    }
+
+    //carga eñl vcector que trae por parametros al copmbo
+    
+    public void cargarCombo(String[] listaArtistas)
+    {
+     this.cboxArtistas.setModel(new DefaultComboBoxModel<>(listaArtistas));
+    }
+    
+    
+    public String devolverCombo()
+    {
+      return cboxArtistas.getSelectedItem().toString();
+    
+    }
+    
+    
+    public boolean verificar()
+    {
+      if (jtNombre.getText().isEmpty()||jtPais.getText().isEmpty()
+           ||jtGenero.getText().isEmpty()||jtId.getText().isEmpty())
+      {
+      return true;
+      }
+      return false;
+    }
     
     
     
@@ -47,6 +107,7 @@ public class PanelArtista extends javax.swing.JPanel {
         jtPais = new javax.swing.JTextField();
         jtGenero = new javax.swing.JTextField();
         jtId = new javax.swing.JTextField();
+        cboxArtistas = new javax.swing.JComboBox<>();
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
@@ -72,6 +133,12 @@ public class PanelArtista extends javax.swing.JPanel {
             }
         });
 
+        cboxArtistas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxArtistasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,7 +156,9 @@ public class PanelArtista extends javax.swing.JPanel {
                     .addComponent(jtPais)
                     .addComponent(jtGenero)
                     .addComponent(jtId, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(cboxArtistas, 0, 153, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +166,8 @@ public class PanelArtista extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboxArtistas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -110,7 +180,7 @@ public class PanelArtista extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -118,8 +188,13 @@ public class PanelArtista extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtNombreActionPerformed
 
+    private void cboxArtistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxArtistasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxArtistasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cboxArtistas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

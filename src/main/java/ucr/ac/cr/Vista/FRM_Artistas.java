@@ -4,6 +4,9 @@
  */
 package ucr.ac.cr.Vista;
 
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -16,6 +19,34 @@ public class FRM_Artistas extends javax.swing.JFrame {
     public FRM_Artistas() {
         initComponents();
     }
+    
+    public PanelArtista getPanelDatosArtista()
+    {  
+        return this.panelArtista1;
+    }
+    
+    public PanelBotones getPanelBotones()
+    {  
+        return this.panelBotones1;
+    }
+    
+    public void setEscuchadores(ActionListener manejador)
+    {
+      this.panelBotones1.escuchadorBotones(manejador);
+      this.panelArtista1.escuchador(manejador);
+      
+    }
+    
+    
+    public void mensaje(String mensaje)
+    {
+        JOptionPane.showMessageDialog(null, mensaje);
+        
+      
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,40 +82,7 @@ public class FRM_Artistas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FRM_Artistas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FRM_Artistas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FRM_Artistas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FRM_Artistas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FRM_Artistas().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ucr.ac.cr.Vista.PanelArtista panelArtista1;
