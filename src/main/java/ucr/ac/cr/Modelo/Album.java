@@ -21,11 +21,12 @@ public class Album
     
     
 
-    public Album(String titulo, int ano, ArrayList<Artista> artistas, ArrayList<Cancion> canciones) {
+    public Album(String titulo, int ano, ArrayList<Cancion> canciones,  ArrayList<Artista> artistas) {
         this.titulo = titulo;
         this.ano = ano;
-        this.artistas = artistas;
         this.canciones = canciones;
+        this.artistas = artistas;
+        
     }
 
     public String getTitulo() {

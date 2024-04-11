@@ -51,7 +51,7 @@ public class FRM_ALBUMES extends javax.swing.JFrame {
      return jtTitulo.getText();
     }
     
-     public String getTxTiutulo()
+     public String getTxTAno()
     {
      return jtAno.getText();
     }
@@ -130,6 +130,7 @@ public class FRM_ALBUMES extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        cboxCanciones.setActionCommand("comboBoxCanciones");
         cboxCanciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboxCancionesActionPerformed(evt);
@@ -157,6 +158,7 @@ public class FRM_ALBUMES extends javax.swing.JFrame {
             }
         });
 
+        cboxArtistas.setActionCommand("comboBoxArtista");
         cboxArtistas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboxArtistasActionPerformed(evt);

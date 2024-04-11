@@ -14,11 +14,16 @@ public class RegistroAlbum
 {
     private ArrayList<Album> albumes;
     String mensaje;
+    
+    private ArrayList<Artista> artistas;
+    private ArrayList <Cancion> canciones;
 
     public RegistroAlbum() 
     {
         this.albumes = new ArrayList<>();
         this.mensaje = "";
+        this.albumes=new ArrayList<>();
+        this.artistas=new ArrayList<>();
     }
     
     
@@ -55,6 +60,75 @@ public class RegistroAlbum
       }
       return null;
     }
+    
+    
+    public String agregarCancion(Cancion cancion)
+    {
+       if(cancion!=null)
+       {
+         canciones.add(cancion);
+            mensaje="Cancion agregada correctamente";
+        
+       
+       }else
+       { 
+         mensaje="Error al guardar";
+       }
+       
+       return mensaje;
+    }
+    
+    
+    public String agregarArtista(Artista artista)
+    {
+       if(artista!=null)
+       {
+         artistas.add(artista);
+            mensaje="Cancion agregada correctamente";
+        
+       
+       }else
+       { 
+         mensaje="Error al guardar";
+       }
+       
+       return mensaje;
+    }
+    
+   //************************************************************************
+
+    public ArrayList<Album> getAlbumes() 
+    {
+        return albumes;
+    }
+   //************************************************************************
+    public ArrayList<Artista> getArtistas() 
+    {
+        return artistas;
+    }
+   //************************************************************************
+    public ArrayList<Cancion> getCanciones() 
+    {
+        return canciones;
+    }
+    
+    //************************************************************************
+    
+    
+    public String [][] getMatrizTabla()
+    {
+    String [][] matrizTabla=new String [canciones.size()][Album.TITULO_TABLA.length];
+    
+        for (int f = 0; f< matrizTabla.length; f++) 
+        {
+            matrizTabla[f][0]=canciones.get(f).getTitulo();
+            matrizTabla[f][1]=artistas.get(f).getNombre();
+            
+        }
+    
+       return matrizTabla;
+    }
+    
     
     
    

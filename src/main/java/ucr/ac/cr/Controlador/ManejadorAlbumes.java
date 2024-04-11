@@ -6,6 +6,7 @@ package ucr.ac.cr.Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import ucr.ac.cr.Modelo.Album;
 import ucr.ac.cr.Modelo.Artista;
 import ucr.ac.cr.Modelo.Cancion;
 import ucr.ac.cr.Modelo.Registro;
@@ -26,7 +27,7 @@ public class ManejadorAlbumes implements ActionListener
     private FRM_ALBUMES frmAlbum;
     private Artista artista;
     private Cancion cancion;
-    
+   
 
     public ManejadorAlbumes(Registro registro, RegistroArtista registroAr, RegistroAlbum registroAl) 
     {
@@ -47,7 +48,50 @@ public class ManejadorAlbumes implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        
+        switch (e.getActionCommand().toString()) 
+        {
+            
+            case "comboBoxCanciones":
+                
+                this.cancion= this.registro.buscarCancion(frmAlbum.devolverComboCanciones());
+                
+                
+                
+                break;
+                
+                
+            case "comboBoxArtistas":
+                
+                this.artista= this.registroAr.buscarArtista(frmAlbum.devolverComboArtistas());
+                this.frmAlbum.setTxTNombre(artista.getNombre());
+                
+                break;
+                
+                
+            case "Agregar a tabla":
+                
+                registroAl.agregarArtista(artista);
+                registroAl.agregarCancion(cancion);
+                
+                frmAlbum.setDatosTabla(registroAl.getMatrizTabla(), Album.TITULO_TABLA);
+                
+                frmAlbum.getMensaje("Agregado a la tabla correctamente");
+
+
+                
+                break;
+                
+                
+                case "Guardar Album":
+                
+                    
+                    frmAlbum.getMensaje(registroAl.agregarAlbum(new Album(frmAlbum.getTxTTitulo(),
+                            Integer.parseInt(frmAlbum.getTxTAno()), registroAl.getCanciones(), 
+                            registroAl.getArtistas())));
+                    
+                break;
+           
+        }
         
     }
     
